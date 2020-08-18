@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+    id 'war'
+}
+
+group = 'com.spring'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    providedRuntime
+
+    compile.exclude module: 'spring-boot-starter-tomcat'// исключаем Tomcat, т.к. мы используем GlassFish
+
+}
+
+dependencies {
+
+    compile('org.springframework.boot:spring-boot-starter-data-jpa:+')
+    compile('org.springframework.boot:spring-boot-starter-web:+')
+    compile('org.springframework.boot:spring-boot-starter-security:+')
+    compile("org.springframework.boot:spring-boot-starter-actuator:+")
+    compile("org.springframework.boot:spring-boot-starter-aop:+")
+
+    compile 'org.projectlombok:lombok:+'
+    compile 'com.google.guava:guava:+'
+
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+    compileOnly 'javax:javaee-api:7.0'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
