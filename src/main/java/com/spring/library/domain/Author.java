@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name="author", schema = "public")
+@Table(name = "author", schema = "public")
 @EqualsAndHashCode(of = "id")
 @Getter
 @Setter

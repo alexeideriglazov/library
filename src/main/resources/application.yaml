@@ -28,8 +28,8 @@ logging:
   level:
     ROOT: error
     org.springframework: info
-    javax.faces: info
-    org.omnifaces: info
+    javax.faces: warn
+    org.omnifaces: warn
     org.springframework.security: info
     org.hibernate: info
     org.hibernate.type.descriptor.sql: info
