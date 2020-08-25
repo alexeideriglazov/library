@@ -10,7 +10,7 @@ import org.hibernate.annotations.SelectBeforeUpdate;
 import javax.persistence.*;
 
 @Entity
-@Table(catalog = "library")
+@Table(name="book", schema = "public")
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate

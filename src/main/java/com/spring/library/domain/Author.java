@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(catalog = "library")
+@Table(name="author", schema = "public")
 @EqualsAndHashCode(of = "id")
 @Getter
 @Setter
@@ -23,10 +23,13 @@ public class Author {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @Column(name = "id")
     private Long id;
 
-    private String fio;
+    @Column(name = "name")
+    private String name;
 
+    @Column(name = "birthday")
     private Date birthday;
 
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
@@ -34,7 +37,7 @@ public class Author {
 
     @Override
     public String toString() {
-        return fio;
+        return name;
     }
 
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @EqualsAndHashCode(of = "id")
-@Table(catalog = "library")
+@Table(name="genre", schema = "public")
 @DynamicUpdate
 @DynamicInsert
 @SelectBeforeUpdate

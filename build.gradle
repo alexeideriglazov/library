@@ -7,8 +7,8 @@ plugins {
 
 group = 'com.spring'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.11
-targetCompatibility = 1.11
+sourceCompatibility = "11"
+targetCompatibility = "11"
 
 repositories {
     mavenCentral()
@@ -28,14 +28,18 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security:+')
     compile("org.springframework.boot:spring-boot-starter-actuator:+")
     compile("org.springframework.boot:spring-boot-starter-aop:+")
+    compile("org.springframework.boot:spring-boot-starter-batch:+")
+
+
 
     compile 'org.projectlombok:lombok:+'
     compile 'com.google.guava:guava:+'
 
-    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.13'
+
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.14'
+    compile('javax.xml.bind:jaxb-api:2.3.0')
+    compile group: 'javassist', name: 'javassist', version: '3.12.1.GA'
     compileOnly 'javax:javaee-api:7.0'
-
-
 }
 
 test {

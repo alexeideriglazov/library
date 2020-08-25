@@ -11,7 +11,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(catalog = "library")
+@Table(name="vote", schema = "public")
 @EqualsAndHashCode(of = "id")
 @Getter
 @Setter
