@@ -26,7 +26,7 @@ public class RedirectController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String baseUrlRedirect(HttpServletRequest request, HttpServletResponse httpServletResponse) {
         List<Author> authorList = authorRepository.findAll();
-
+        List<Book> books = bookRepository.findByNameContainingIgnoreCaseOrAuthorNameContainingIgnoreCaseOrderByName("Notre", "Antoine");
         return "ok";
     }
 }
