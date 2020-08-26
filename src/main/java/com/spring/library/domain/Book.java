@@ -54,13 +54,13 @@ public class Book {
     private String descr;
 
     @Column(name = "view_count")
-    private long viewCount;
+    private int viewCount;
 
     @Column(name = "total_rating")
-    private long totalRating;
+    private int totalRating;
 
     @Column(name = "total_vote_count")
-    private long totalVoteCount;
+    private int totalVoteCount;
 
     @Column(name = "avg_rating")
     private int avgRating;
@@ -68,7 +68,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(int id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr, long viewCount, long totalRating, long totalVoteCount, int avgRating) {
+    public Book(int id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr, int viewCount, int totalRating, int totalVoteCount, int avgRating) {
         this.id = id;
         this.name = name;
         this.pageCount = pageCount;
