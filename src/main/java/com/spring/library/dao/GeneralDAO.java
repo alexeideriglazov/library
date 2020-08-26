@@ -10,7 +10,7 @@ public interface GeneralDAO<T> {
 
     List<T> search(String... searchString);
 
-    T get(long id);
+    T get(int id);
 
     T save(T obj);
 

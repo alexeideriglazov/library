@@ -15,6 +15,8 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Integer> {
     List<Book> findByNameContainingIgnoreCaseOrAuthorNameContainingIgnoreCaseOrderByName(String bookName, String authorName);
 
+    Page<Book> findByNameContainingIgnoreCaseOrAuthorNameContainingIgnoreCaseOrderByName(String bookName, String authorName, Pageable pageable);
+
     @Query("select new com.spring.library.domain.Book(b.id, b.name, b.pageCount, b.isbn, b.genre, b.author, b.publisher, b.publishYear, b.image, b.descr, b.viewCount, b.totalRating, b.totalVoteCount, b.avgRating) from Book b")
     Page<Book> findAllWithoutContent(Pageable pageable);
 

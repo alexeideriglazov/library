@@ -21,7 +21,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private String name;
 
@@ -68,7 +68,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(Long id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr, long viewCount, long totalRating, long totalVoteCount, int avgRating) {
+    public Book(int id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr, long viewCount, long totalRating, long totalVoteCount, int avgRating) {
         this.id = id;
         this.name = name;
         this.pageCount = pageCount;
@@ -85,7 +85,7 @@ public class Book {
         this.avgRating = avgRating;
     }
 
-    public Book(Long id, byte[] image) {
+    public Book(int id, byte[] image) {
         this.id = id;
         this.image = image;
     }
