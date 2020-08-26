@@ -22,7 +22,7 @@ public class Vote {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Long id;
+    private int id;
 
     private String value;
 

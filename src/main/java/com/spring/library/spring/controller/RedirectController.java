@@ -1,5 +1,6 @@
 package com.spring.library.spring.controller;
 
+import com.spring.library.dao.impl.BookService;
 import com.spring.library.domain.Book;
 import com.spring.library.spring.repository.AuthorRepository;
 import com.spring.library.spring.repository.BookRepository;
@@ -20,19 +21,12 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @Log
 public class RedirectController {
-
     @Autowired
-    private AuthorRepository authorRepository;
-    @Autowired
-    private BookRepository bookRepository;
-    @Autowired
-    private GenreRepository genreRepository;
-    @Autowired
-    private PublisherRepository publisherRepository;
+    private BookService bookService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String baseUrlRedirect(HttpServletRequest request, HttpServletResponse httpServletResponse) {
-        Page<Book> bookList = bookRepository.findAllWithoutContent(PageRequest.of(0, 10, Sort.by(Sort.Direction.ASC, "name")));
+        Page<Book> bookList = bookService.getAll(0, 10,"name",Sort.Direction.ASC);
         return "ok";
     }
 }
