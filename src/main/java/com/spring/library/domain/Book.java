@@ -68,7 +68,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(int id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr, int viewCount, int totalRating, int totalVoteCount, int avgRating) {
+    public Book(int id, String name, Integer pageCount, String isbn, Genre genre, Author author, Publisher publisher, Integer publishYear, byte[] image, String descr, int viewCount, int totalRating, int  totalVoteCount, int avgRating) {
         this.id = id;
         this.name = name;
         this.pageCount = pageCount;
