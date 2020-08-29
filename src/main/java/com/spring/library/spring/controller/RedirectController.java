@@ -21,13 +21,10 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @Log
 public class RedirectController {
-    @Autowired
-    private BookService bookService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String baseUrlRedirect(HttpServletRequest request, HttpServletResponse httpServletResponse) {
-        Page<Book> bookList = bookService.getAll(0, 10,"name",Sort.Direction.ASC);
-        return "ok";
+       return "redirect:" + request.getRequestURL().append("index.xhtml").toString();
     }
 }
 
