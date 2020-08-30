@@ -15,6 +15,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.List;
 
 @ManagedBean
 @SessionScoped
@@ -24,6 +25,7 @@ import javax.faces.bean.SessionScoped;
 @Log
 public class BookController extends AbstractController {
     public static final int DEFAULT_PAGE_SIZE = 20;
+    public static final int TOP_BOOKS_LIMIT = 5;
 
     private int rowsCount = DEFAULT_PAGE_SIZE;
 
@@ -61,5 +63,9 @@ public class BookController extends AbstractController {
             }
         }
         return bookPages;
+    }
+
+    public List<Book> getTopBooks(){
+        return bookDao.findTopBooks(TOP_BOOKS_LIMIT);
     }
 }
